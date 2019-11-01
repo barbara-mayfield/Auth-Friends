@@ -116,6 +116,20 @@ img {
   margin: 0.7rem 0;
 }
 
+.person-card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.5rem auto;
+  width: 45%;
+  padding: 1.8rem;
+}
+
+.friendlist {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.4rem;
+}
+
 /* List */
 .list {
   margin: 0.5rem 0;
@@ -312,6 +326,22 @@ input {
   margin: 1.2rem 0;
 }
 
+.friendform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.friendform-text {
+  margin-top: 0.3rem;
+  color: #888;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  width: 75%;
+}
+
 .form-text {
   display: block;
   margin-top: 0.3rem;
@@ -325,7 +355,7 @@ input[type='date'],
 select,
 textarea {
   display: block;
-  width: 50%;
+  width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;

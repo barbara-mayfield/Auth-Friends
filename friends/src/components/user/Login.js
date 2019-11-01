@@ -22,11 +22,11 @@ export default function Login(props) {
         api()
 			.post('/login', userData)
 			.then(res => {
-				localStorage.setItem('token', res.data.token)
+				localStorage.setItem('token', res.data.payload)
 				props.history.push('/friends')
 			})
 			.catch(err => {
-				setError(err.response.data)
+				setError(err)
 			})
     }
 

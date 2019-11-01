@@ -10,11 +10,11 @@ export default function Nav(props) {
     return (
         <div className='navbar bg-dark'>
             <h1>
-                <Link exact to='/'><i className={props.logo} /> {props.title}</Link>
+                <Link to='/' exact="true"><i className={props.logo} /> {props.title}</Link>
             </h1>
             
             <div className='ul'>
-                <Link exact to='/' >Home</Link>
+                <Link to='/' exact="true">Home</Link>
 				<Link to='/account'>My Account</Link>
                 <Link to='/friends'>Friends</Link>
                 {!logged && <Link to='/api/login'>Log In</Link>}
