@@ -3,8 +3,7 @@ import api from '../utils/api'
 
 export default function Login(props) {
 
-    const [setError] = useState()
-
+    const [error, setError] = useState()
     const [userData, setUserData] = useState({
         username: '',
         password: ''
@@ -21,10 +20,10 @@ export default function Login(props) {
         e.preventDefault()
 
         api()
-			.post('/api/login', userData)
+			.post('/login', userData)
 			.then(res => {
-				localStorage.setItem("token", res.data.token)
-				props.history.push("/")
+				localStorage.setItem('token', res.data.token)
+				props.history.push('/friends')
 			})
 			.catch(err => {
 				setError(err.response.data)
@@ -35,23 +34,23 @@ export default function Login(props) {
         <div>
             <form onSubmit={handleSubmit}>
                 <input 
-                    type="text"
-                    className="input" 
-                    name="username" 
-                    placeholder="Username"
+                    type='text'
+                    className='input' 
+                    name='username' 
+                    placeholder='Username'
                     value={userData.username}
                     onChange={handleChange} 
                 />
                 <input 
-                    type="password" 
-                    className="input"
-                    name="password" 
-                    placeholder="Password"
+                    type='password' 
+                    className='input'
+                    name='password' 
+                    placeholder='Password'
                     value={userData.password}
                     onChange={handleChange} 
                 />
             
-                <button type="submit" className="btn">Sign In</button>
+                <button type='submit' className='btn'>Sign In</button>
             </form>
         </div>
     )
