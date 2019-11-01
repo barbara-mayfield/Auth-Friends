@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom"
 
 function Logout(props) {
 	localStorage.removeItem('token')
-	return <Redirect to="/login" />
+	return <Redirect to="/api/login" />
 }
 
 export default Logout

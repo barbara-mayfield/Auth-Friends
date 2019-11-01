@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import api from '../utils/api'
 
 function AddFriend(props) {
-    console.log(props, "<- AddFriend props")
     const [newFriend, addNewFriend] = useState({
+        id: null,
         name: '',
         age: '',
-        email: ''
+        email: '',
     })
 
     const handleChange = e => {
@@ -24,6 +24,7 @@ function AddFriend(props) {
             .then(res => {
                 addNewFriend({
                     ...newFriend,
+                    id: Date.now(),
                     name: '',
                     age: '',
                     email: ''
@@ -64,7 +65,7 @@ return (
                     className='friendform-text'
                 />
 
-                <button type="submit" className='btn btn-dark'>Add Friend</button>
+                <button type="submit" className='btn-friend btn-dark'>Add Friend</button>
             </form>
         </div>
     )
