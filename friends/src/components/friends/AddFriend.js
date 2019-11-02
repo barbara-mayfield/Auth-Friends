@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+
 import api from '../utils/api'
 
 function AddFriend(props) {
     const [newFriend, addNewFriend] = useState({
-        id: null,
+        id: Date.now(),
         name: '',
         age: '',
         email: '',
@@ -17,13 +18,11 @@ function AddFriend(props) {
     }
 
     const handleSubmit = e => {
-        e.preventDefault()
-
         api()
             .post('/friends', newFriend)
             .then(res => {
+                console.log(res.data)
                 addNewFriend({
-                    ...newFriend,
                     id: Date.now(),
                     name: '',
                     age: '',
@@ -65,7 +64,13 @@ return (
                     className='friendform-text'
                 />
 
-                <button type="submit" className='btn-friend btn-dark'>Add Friend</button>
+                <button 
+                    type="submit" 
+                    className='btn-friend btn-dark'
+                    onClick={handleSubmit}
+                >
+                    Add Friend
+                </button>
             </form>
         </div>
     )
